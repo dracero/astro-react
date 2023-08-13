@@ -7,11 +7,19 @@ const App = () => {
 // Counter is a state initialized to 0
 const [counter, setCounter] = useState(0)
 
-// Function is called everytime increment button is clicked
 const handleClick1 = (env) => {
     env.preventDefault();
-	// Counter state is incremented
-	setCounter(counter + 1)
+    // Counter state is incremented
+    setCounter(counter + 1);
+    console.log(counter); // Verificar que el valor de counter se está actualizando correctamente
+    const url = `/builtwith.json?value=${Number(counter)}`;
+    console.log(url); // Verificar que la URL se está construyendo correctamente
+    //I need to call the API here and pass counter as a parameter
+    fetch(url, { method: 'GET'
+    }).then(response => response.json()).then(data => {
+        console.log(data);
+        // Aquí puedes hacer lo que quieras con los datos
+    }).catch(error => {console.error(error); });
 }
 
 // Function is called everytime decrement button is clicked
