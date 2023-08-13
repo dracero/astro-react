@@ -10,7 +10,7 @@ export async function get({request}) {
     value: params.get('value'),
   };
 
-  console.log(data)
+  console.log("backend",data.value)
   
   // return the response
   return new Response(JSON.stringify(data), {
