@@ -20,9 +20,16 @@ const handleClick1 = (env) => {
 }
 
 // Function is called everytime decrement button is clicked
-const handleClick2 = () => {
+const handleClick2 = (env) => {
 	// Counter state is decremented
+	env.preventDefault();
 	setCounter(counter - 1)
+    const url = `/decrement.json?value=${Number(counter)}`;
+    fetch(url, { method: 'GET'
+    }).then(response => response.json()).then(data => {
+        console.log(data);
+        // Aquí puedes hacer lo que quieras con los datos
+    }).catch(error => {console.error(error); });
 }
 
 return (
