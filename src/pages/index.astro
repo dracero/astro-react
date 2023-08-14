@@ -1,10 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
-import MyReactComponent from '../components/App.jsx';
+import Decrement from '../components/Decrement';
+import Increment from '../components/Increment';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Welcome to Astro">
 	<main>
 		<svg
 			class="astro-a"
@@ -46,9 +47,15 @@ import MyReactComponent from '../components/App.jsx';
 				body="Learn how Astro works and explore the official API docs."
 			/>
 		</ul>
-		<MyReactComponent client:load/>		
+		<table>
+			<tr>
+			  <th><Increment client:load/></th>
+			  <th><Decrement client:load/></th>
+			</tr>
+	    </table>			 
 	</main>
 </Layout>
+
 <style>
 	main {
 		margin: auto;
@@ -60,7 +67,7 @@ import MyReactComponent from '../components/App.jsx';
 		line-height: 1.6;
 	}
 	.astro-a {
-		position: absolute;
+		position: relative;
 		top: -32px;
 		left: 50%;
 		transform: translatex(-50%);
@@ -107,3 +114,4 @@ import MyReactComponent from '../components/App.jsx';
 		padding: 0;
 	}
 </style>
+../components/Decrement.jsx
