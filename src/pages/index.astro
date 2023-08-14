@@ -3,9 +3,12 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Decrement from '../components/Decrement';
 import Increment from '../components/Increment';
+import Alert from '../components/Alert.svelte';
+import Navigation from '../components/Navigation.astro';
 ---
 
 <Layout title="Welcome to Astro">
+	<Navigation />
 	<main>
 		<svg
 			class="astro-a"
@@ -51,6 +54,7 @@ import Increment from '../components/Increment';
 			<tr>
 			  <th><Increment client:load/></th>
 			  <th><Decrement client:load/></th>
+			  <th><Alert client:load/></th>
 			</tr>
 	    </table>			 
 	</main>
