@@ -1,6 +1,8 @@
 <script>
+    import { counter } from '../pages/store.js';
     function showAlert() {
       alert('¡Hola!');
+      alert(counter.get())
     }
   </script>
   
